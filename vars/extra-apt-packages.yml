@@ -7,3 +7,4 @@ extra_apt_packages:
   - tor
   - spotify-client
   - typora
+  - keepassxc
