@@ -1,0 +1,68 @@
+# This task runs tasks that alter the User Interface.
+---
+- name: Move dock to bottom (like Windows and macOS)
+  shell: gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+  
+- name: Make dock icons smaller
+  shell: gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 28
+  
+- name: Auto-hide the dock
+  shell: gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+
+- name: Set text scaling factor to 90% (slightly smaller text)
+  shell: gsettings set org.gnome.desktop.interface text-scaling-factor .9
+  
+- name: Copy the wallpaper
+  copy:
+    src: files/wallpaper.jpg
+    dest: /home/undisclosed/.wallpaper.jpg
+    owner: undisclosed
+    group: undisclosed
+    mode: 0600
+ 
+- name: Set the wallpaper
+  shell: gsettings set org.gnome.desktop.background picture-uri '/home/undisclosed/.wallpaper.jpg'
+ 
+- name: Add Papirus Icon Theme PGP key
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 9461999446FAF0DF770BFC9AE58A9D36647CAE7F
+
+- name: Add Papirus Icon Theme repository
+  become: yes
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/papirus/papirus/ubuntu focal main
+
+- name: Install Papirus icon theme
+  become: yes
+  apt:
+    update_cache: yes
+    name: papirus-icon-theme
+
+- name: Set Papirus Icon Theme
+  shell: gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+
+- name: Copy Matcha Theme files
+  become: yes
+  copy:
+    src: files/themes/Matcha/
+    dest: /usr/share/themes/
+    owner: root
+    group: root
+    mode: 0755
+    remote_src: true
+
+- name: Set Matcha theme
+  shell: gsettings set org.gnome.desktop.interface gtk-theme 'Matcha-dark-sea'
+
+- name: Set dark gedit colour scheme
+  shell: gsettings set org.gnome.gedit.preferences.editor scheme oblivion
+
+- name: Move close button to the left (prevents accidential closing of apps)
+  shell: gsettings set org.gnome.desktop.wm.preferences button-layout 'close:maximize,minimize'
+  # gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close' for default
+  # gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:' for macOS style
+
+- name: Set favourite dock apps
+  shell: gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'typora.desktop', 'spotify.desktop', 'keybase.desktop', 'org.gnome.Terminal.desktop']"

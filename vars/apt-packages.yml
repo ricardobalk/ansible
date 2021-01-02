@@ -1,0 +1,10 @@
+# This file contains the regular APT packages that are to be installed on new systems.
+---
+apt_packages:
+  - htop
+  - tmux
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common

@@ -1,0 +1,9 @@
+# This file contains the additional APT packages that are to be installed on new systems.
+---
+extra_apt_packages:
+  - docker-ce
+  - docker-ce-cli
+  - keybase
+  - tor
+  - spotify-client
+  - typora

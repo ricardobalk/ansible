@@ -1,0 +1,18 @@
+---
+- name: Adding additional APT repo keys
+  become: true
+  apt_key: id={{ item.key }}
+  with_items:
+    - "{{ extra_apt_repos }}"
+    
+- name: Adding additional APT repositories
+  become: true
+  apt_repository: repo={{ item.repo }}
+  with_items:
+    - "{{ extra_apt_repos }}"
+
+- name: Installing additional APT packages
+  become: true
+  apt:
+    update_cache: yes
+    name: "{{ extra_apt_packages }}"

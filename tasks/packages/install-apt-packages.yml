@@ -1,0 +1,14 @@
+---
+- name: Install regular APT packages
+  become: true
+  apt:
+    update_cache: yes
+    name:
+    - htop
+    - tmux
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common
+
