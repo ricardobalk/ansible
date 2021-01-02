@@ -1,7 +1,7 @@
 ---
 - name: Adding additional APT repo keys
   become: true
-  apt_key: id={{ item.key }}
+  apt_key: id={{ item.key }} keyserver=keyserver.ubuntu.com
   with_items:
     - "{{ extra_apt_repos }}"
     
