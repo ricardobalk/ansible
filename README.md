@@ -1,33 +1,21 @@
-# ricardobalk/ansible
+# ricardobalk/dotfiles-plus
 
 
 
-This repository contains an Ansible playbook for setting up new desktop systems. It has been designed for and tested on Ubuntu 20.04.1 LTS.
+This repository contains my dotfiles and also some awesome Ansible playbooks, that can be used for various things, like setting up new Ubuntu systems from scratch the way I like it. Or &mdash; in non geek language &mdash; I have an empty computer, I want to install some apps that I use regularly, so those need to be installed.
 
 
 
-## Usage
+ I am a geek. I like to get shit done. So let's automate as many things as possible. In other words...
 
-- Install Ansible
-
-  ```sh
-  sudo apt install ansible
-  ```
-
-- Clone this repository to a place of choice, obviously.
-
-- Execute the Ansible playbook
-
-  ```sh
-  ansible-playbook -K playbook.yml
-  ```
-
-  `-K` will ask for the become root password, as some changes requires root access, like installing apt packages and system themes.
+> When life gives you computers, you let them do the work for you.
 
 
 
-## Result
+## Repository Contents
 
-Various applications have been installed. System theme should be set up. Application icons are different. Text editor has a different theme. Window buttons have been changed to prevent accidental closing. Text scaling has been altered. Dock has been placed on the bottom, uses smaller icons and it hides automatically. A desktop background has been added.
+Right now, it includes 
 
-![Result](files/result.png)
+- [an Ansible playbook for setting up new desktop systems.](./ansible-playbooks) It has been designed for and tested on Ubuntu 20.04.1 LTS.
+
+That's it for now. I will add my dotfiles and a bunch of Bash functions, aliases, exports ... later on.

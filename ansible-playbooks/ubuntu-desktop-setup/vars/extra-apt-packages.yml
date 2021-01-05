@@ -8,3 +8,4 @@ extra_apt_packages:
   - spotify-client
   - typora
   - keepassxc
+  - mumble

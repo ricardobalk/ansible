@@ -8,3 +8,4 @@ apt_packages:
   - curl
   - gnupg-agent
   - software-properties-common
+  - net-tools
