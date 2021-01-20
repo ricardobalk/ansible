@@ -32,3 +32,23 @@ extra_apt_repos:
 - name: Mumble
   repo: deb http://ppa.launchpad.net/mumble/release/ubuntu {{ansible_distribution_release}} main
   key: 22C54CD5AAE0971730875E0285DECED27F05CF9E
+
+- name: Scribus
+  repo: deb http://ppa.launchpad.net/scribus/ppa/ubuntu {{ansible_distribution_release}} main
+  key: DD9317F8768E710104B4846DB70D6F7664B6EE15
+
+- name: Node.js 12.x
+  repo: deb https://deb.nodesource.com/node_12.x {{ansible_distribution_release}} main
+  key: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
+
+- name: Brave Browser
+  repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+  key: D8BAD4DE7EE17AF52A834B2D0BB75829C2D4E821
+
+- name: Visual Studio Code
+  repo: deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main
+  key: BC528686B50D79E339D3721CEB3E94ADBE1229CF
+
+- name: Signal
+  repo: deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+  key: DBA36B5181D0C816F630E889D980A17457F6FB06

@@ -9,3 +9,8 @@ apt_packages:
   - gnupg-agent
   - software-properties-common
   - net-tools
+  - libccid
+  - pcscd
+  - scdaemon
+  - git
+  - git-lfs

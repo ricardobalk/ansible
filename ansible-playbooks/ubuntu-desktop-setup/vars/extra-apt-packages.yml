@@ -9,3 +9,7 @@ extra_apt_packages:
   - typora
   - keepassxc
   - mumble
+  - gh
+  - scribus
+  - nodejs
+  - brave-browser
