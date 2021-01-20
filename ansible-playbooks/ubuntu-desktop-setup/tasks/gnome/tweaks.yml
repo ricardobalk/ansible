@@ -53,8 +53,16 @@
     mode: 0755
     remote_src: true
 
-- name: Set Matcha theme
-  shell: gsettings set org.gnome.desktop.interface gtk-theme 'Matcha-dark-sea'
+- name: Set user theme
+  shell: gsettings set org.gnome.desktop.interface gtk-theme 'Matcha-dark-azul'
+
+- name: Install Gnome Shell extensions # for changing the shell theme
+  become: yes
+  apt:
+    name: gnome-shell-extensions
+
+- name: Set shell theme
+  shell: gsettings set org.gnome.shell.extensions.user-theme name 'Matcha-dark-azul'
 
 - name: Set dark gedit colour scheme
   shell: gsettings set org.gnome.gedit.preferences.editor scheme oblivion
