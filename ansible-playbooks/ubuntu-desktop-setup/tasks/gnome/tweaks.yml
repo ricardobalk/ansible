@@ -68,7 +68,7 @@
   shell: gsettings set org.gnome.gedit.preferences.editor scheme oblivion
 
 - name: Move close button to the left (prevents accidential closing of apps)
-  shell: gsettings set org.gnome.desktop.wm.preferences button-layout 'close:maximize,minimize'
+  shell: gsettings set org.gnome.desktop.wm.preferences button-layout 'close:appmenu,maximize,minimize'
   # gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close' for default
   # gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:' for macOS style
 
