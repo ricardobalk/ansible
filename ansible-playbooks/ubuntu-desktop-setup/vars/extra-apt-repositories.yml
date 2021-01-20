@@ -18,7 +18,7 @@ extra_apt_repos:
   key: 2CA32056ED206CB81F44A8CAC99B11DEB97541F0
 
 - name: Tor
-  repo: deb http://deb.torproject.org/torproject.org {{ansible_distribution_release}} main
+  repo: deb [arch=amd64] http://deb.torproject.org/torproject.org {{ansible_distribution_release}} main
   key: A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 
 - name: Spotify
