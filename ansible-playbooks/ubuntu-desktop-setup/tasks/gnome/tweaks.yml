@@ -73,4 +73,4 @@
   # gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:' for macOS style
 
 - name: Set favourite dock apps
-  shell: gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'typora.desktop', 'spotify.desktop', 'keybase.desktop', 'org.gnome.Terminal.desktop']"
+  shell: gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'typora.desktop', 'spotify.desktop', 'keybase.desktop', 'signal-desktop.desktop', 'org.keepassxc.KeePassXC.desktop', 'gitkraken.desktop', 'code.desktop', 'org.gnome.Terminal.desktop']"
