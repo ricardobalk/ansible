@@ -1,4 +1,4 @@
-# dotfiles &oplus;
+# dotfiles &#x2795;
 
 This repository contains my dotfiles and also some awesome Ansible playbooks, that can be used for setting up new systems from scratch the way I like it.
 
