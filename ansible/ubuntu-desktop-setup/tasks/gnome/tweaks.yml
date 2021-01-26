@@ -2,16 +2,16 @@
 ---
 - name: Move dock to bottom (like Windows and macOS)
   shell: gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-  
+
 - name: Make dock icons smaller
   shell: gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 28
-  
+
 - name: Auto-hide the dock
   shell: gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 
 - name: Set text scaling factor to 90% (slightly smaller text)
   shell: gsettings set org.gnome.desktop.interface text-scaling-factor .9
-  
+
 - name: Copy the wallpaper
   copy:
     src: files/wallpaper.jpg
@@ -19,10 +19,10 @@
     owner: undisclosed
     group: undisclosed
     mode: 0600
- 
+
 - name: Set the wallpaper
   shell: gsettings set org.gnome.desktop.background picture-uri '/home/undisclosed/.wallpaper.jpg'
- 
+
 - name: Add Papirus Icon Theme PGP key
   become: yes
   apt_key:

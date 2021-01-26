@@ -1,0 +1,6 @@
+# This playbook implements a backdoor into your Ubuntu / Debian-based system, so you can spy on yourself (?)
+# It also changes password login mode to public key authentication, to enhance the security when doing so.
+# We'll implement this backdoor in such a way that the person who uses the backdoor can't be traced :D
+# So if anyone steals your laptop and uses it, they're fucked. And you are awesome.
+---
+
