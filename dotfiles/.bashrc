@@ -117,8 +117,11 @@ if ! shopt -oq posix; then
 fi
 
 # Read custom environmental variables from .env
+# Put secret environmental variables in .env.local, to prevent them ending up
+# in the Git repository.
 set -a
  [ -f $HOME/.env ] && . $HOME/.env
+ [ -f $HOME/.env.local ] && . $HOME/.env.local
 set +a
 
 # Import bash functions from .bash_functions
