@@ -120,3 +120,8 @@ fi
 set -a
  [ -f $HOME/.env ] && . $HOME/.env
 set +a
+
+# Import bash functions from .bash_functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
