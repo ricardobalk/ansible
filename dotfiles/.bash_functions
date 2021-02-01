@@ -1,5 +1,16 @@
 #!/bin/bash
 
+function ip-lookup() {
+ # ip-lookup performs an IP lookup via ipinfo.io. If jq is installed, it will also give a neat colourful output.
+
+ if [ -z $1 ]; then printf "Usage: %s <IP address>\n" "$0" 1>&2; return 1; fi;
+ if [ -z $(which curl) ]; then printf "This function requires curl. Install with sudo apt install -y curl.\n" 1>&2; return 1; fi;
+ if [ -z $IPINFO_ACCESS_TOKEN ]; then printf "Missing ipinfo.io access token. Please set \$IPINFO_ACCESS_TOKEN in .env.local.\n" 1>&2; return 1; fi;
+ ipaddress=$1
+ url=https://ipinfo.io/$ipaddress?token=$IPINFO_ACCESS_TOKEN
+ if [ ! -z $(which jq) ]; then curl -s $url | jq '.'; else curl -s $url; fi
+}
+
 function lan-scan () {
  # lan-scan performs a scan with nmap to show which hosts are in your LAN.
  # it uses 192.168.0.0/24 by default, but can be changed by passing an argument, or by changing the code.
