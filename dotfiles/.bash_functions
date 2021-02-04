@@ -39,3 +39,22 @@ function show-ssh-keys () {
  done
  return 0;
 }
+
+function create-gh-repo () {
+# initialises a Git repo with branches and everything.
+
+ gh repo create --confirm --private "ricardobalk/$1" \
+ && cd "$1" \
+ && printf "# %s" "$1" > README.md \
+ && git add --all \
+ && git commit -m 'First commit' \
+ && git branch -M production \
+ && git push -u origin production \
+ && for branch in staging testing develop; \
+    do \
+     git branch "$branch"; \
+     git push origin "$branch"; \
+    done \
+ && git checkout develop \
+ && git log --show-signature
+}
