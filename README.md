@@ -1,16 +1,17 @@
-# dotfiles &#x2795;
+# ricardobalk/ansible
 
-This repository contains my dotfiles and also some awesome Ansible playbooks, that can be used for setting up new systems from scratch the way I like it.
+Ah, I see you found my collection of Ansible Playbooks, Roles and Tasks!
 
-In non-geek language &mdash; I have an empty computer, I want to install some apps that I use regularly, so those need to be installed. But I like to get shit done and am automating as many things as possible. In other words...
+For those that are not familiar with Ansible yet, Ansible provides a way to set up local or remote computer systems according to pre-written playbooks, roles and tasks. It's very flexible and extensible.
 
-> When life gives you computers, you let them do the work for you.
+## Ansible Playbooks
 
+I currently only have one playbook, for setting up new Ubuntu-based Desktop systems.
 
-## Repository Contents
+- [ubuntu-desktop-setup](./ubuntu-desktop-setup) &mdash; Set up new Ubuntu Desktop systems.
 
-Right now, it includes 
+I will add more playbooks in the future.
 
-- [an Ansible playbook for setting up new desktop systems.](./ansible-playbooks) It has been designed for and tested on Ubuntu 20.04.1 LTS.
+## Contributions
 
-- [dotfiles](./dotfiles), which are basic configuration files common on \*nix, macOS. I believe you could use them with WSL2, too. Not sure. :sweat_smile:
+Have a cool idea? Have you seen something that could be done in a better, more effective or efficient way? Please open a pull request, so I can review it and include it. :+1:
