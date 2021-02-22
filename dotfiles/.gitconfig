@@ -1,6 +1,0 @@
-[user]
-	name = Ricardo Balk
-	email = 14904229+ricardobalk@users.noreply.github.com
-	signingkey = D494FBB8A982455D4D04A38BE1B805352E85E909
-[commit]
-	gpgsign = true
